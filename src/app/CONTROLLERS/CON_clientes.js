@@ -15,4 +15,4 @@ class CON_clientes{
     }
 } // end da classe
 
-module.exports = CON_clientes
+module.exports = CON_clientes;

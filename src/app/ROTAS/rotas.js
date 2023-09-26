@@ -16,4 +16,4 @@ app.get("/home",(req,res) => {
     res.send("Olha a console");
 });
 
-app.get("/listaClientesEJS", cliController.exibeDadosClientesEJS());
+app.get("/listaClientesEJS", cliController.e()
