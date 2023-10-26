@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Listagem de Clientes</title>
+  </head>
+  <body>
+    <h1>Listagem de Clientes</h1>
+    <table>
+      <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Remover</th>
+      </tr>
+      <% clientes.forEach(function(cliente) { %>
+        <tr>
+          <td><%= cliente.nome %></td>
+          <td><%= cliente.idade %></td>
+          <td>
+            <a href="/exclusaoClientes/deleta/<%= cliente.id %>">Remover</a>
+          </td>
+        </tr>
+      <% }); %>
+    </table>
+  </body>
+</html>
