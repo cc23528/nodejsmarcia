@@ -1,0 +1,23 @@
+<!-- visualizacoes/especialidade/listarEspecialidades.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listagem de Especialidades</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+  <h1>Listagem de Especialidades</h1>
+
+  <ul>
+    <% especialidades.forEach(especialidade => { %>
+      <li>
+        <strong>ID:</strong> <%= especialidade.id %>,
+        <strong>Nome:</strong> <%= especialidade.nome %>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

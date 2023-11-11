@@ -1,0 +1,28 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listagem de Consultas</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+  <h1>Listagem de Consultas</h1>
+
+  <ul>
+    <% consultas.forEach(consulta => { %>
+      <li>
+        <strong>ID:</strong> <%= consulta.id %>,
+        <strong>Data:</strong> <%= consulta.dataConsulta %>,
+        <strong>Hora:</strong> <%= consulta.horaConsulta %>,
+        <strong>Médico ID:</strong> <%= consulta.medicoId %>,
+        <strong>Paciente ID:</strong> <%= consulta.pacienteId %>,
+        <strong>Tipo Consulta ID:</strong> <%= consulta.tipoConsultaId %>,
+        <strong>Status Consulta ID:</strong> <%= consulta.statusConsultaId %>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

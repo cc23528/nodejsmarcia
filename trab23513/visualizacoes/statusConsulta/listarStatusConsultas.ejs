@@ -1,0 +1,23 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listagem de Status de Consultas</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+  <h1>Listagem de Status de Consultas</h1>
+
+  <ul>
+    <% statusConsultas.forEach(statusConsulta => { %>
+      <li>
+        <strong>ID:</strong> <%= statusConsulta.id %>,
+        <strong>Nome:</strong> <%= statusConsulta.nome %>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

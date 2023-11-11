@@ -1,31 +1,25 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
-const mysql = require('mysql');
-const clienteControlador = require('./clienteControlador'); // Substitua pelo nome do seu controlador
+const port = 3000;
 
+// Configurando o middleware para lidar com dados JSON
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Configurando o EJS como view engine
 app.set('view engine', 'ejs');
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/public'));
+app.set('views', __dirname + '/visualizacoes');
 
-const connection = mysql.createConnection({
-  host: 'seu_host_mysql',
-  user: 'seu_usuario_mysql',
-  password: 'sua_senha_mysql',
-  database: 'seu_banco_de_dados',
-});
+// Roteadores
+const clientesRouter = require('./rotas/clientes');
+const usuariosRouter = require('./rotas/usuarios');
+const consultasRouter = require('./rotas/consultas');
 
-connection.connect((err) => {
-  if (err) {
-    console.error('Erro de conexão com o banco de dados: ' + err);
-  } else {
-    console.log('Conexão com o banco de dados estabelecida');
-  }
-});
+// Rotas principais
+app.use('/clientes', clientesRouter);
+app.use('/usuarios', usuariosRouter);
+app.use('/consultas', consultasRouter);
 
-app.get('/listagemClientes', clienteControlador.listagemClientes); // Adicione a rota da listagem de clientes
-app.get('/exclusaoClientes/deleta/:id', clienteControlador.deletarClientes); // Rota de exclusão
-
-app.listen(3000, () => {
-  console.log('Servidor Node.js em execução na porta 3000');
+app.listen(port, () => {
+  console.log(`Servidor rodando em http://localhost:${port}`);
 });

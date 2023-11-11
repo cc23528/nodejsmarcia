@@ -1,0 +1,24 @@
+<!-- visualizacoes/acesso/listarAcessos.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listagem de Acessos</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+  <h1>Listagem de Acessos</h1>
+
+  <ul>
+    <% acessos.forEach(acesso => { %>
+      <li>
+        <strong>ID:</strong> <%= acesso.id %>,
+        <strong>Médico ID:</strong> <%= acesso.medicoId %>,
+        <strong>Paciente ID:</strong> <%= acesso.pacienteId %>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>
