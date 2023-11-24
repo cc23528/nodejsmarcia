@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../dbConfig');
+const enviarEmail = require('../servicos/email'); 
 
 // Listar consultas
 router.get('/listar', (req, res) => {
