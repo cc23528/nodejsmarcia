@@ -1,11 +1,12 @@
 // dbConfig.js
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'seu_usuario',
-    password: 'sua_senha',
-    database: 'nome_do_seu_banco',
+    host: 'regulus.cotuca.unicamp.br',
+    user: 'BD23513',
+    password: 'BD23513',
+    database: 'BD23513',
+    connectTimeout: 15000 // Tempo limite em milissegundos
 });
 
 connection.connect((err) => {

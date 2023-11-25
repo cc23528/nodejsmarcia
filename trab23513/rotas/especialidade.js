@@ -6,10 +6,15 @@ const db = require('../dbConfig');
 // Listar especialidades
 router.get('/listar', (req, res) => {
   db.query('SELECT * FROM EspecialidadeMedica', (err, result) => {
-    if (err) throw err;
+    if (err) {
+      console.error('Erro ao buscar especialidades:', err);
+      throw err;
+    }
+    console.log('Resultado da consulta:', result); // Verifique o resultado da consulta
     res.render('especialidade/listarEspecialidades', { especialidades: result });
-    });
+  });
 });
+
 
 // Adicionar especialidade
 router.get('/adicionar', (req, res) => {
